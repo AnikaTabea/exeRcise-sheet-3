@@ -14,9 +14,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ### c)
 
 Strengths 
+
 - great for collaboration
+
 - very hard to lose files
 
 Weaknesses
+
 - can be complicated to use
+
 - Struggles with large files
