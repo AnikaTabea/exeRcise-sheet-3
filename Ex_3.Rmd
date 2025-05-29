@@ -11,3 +11,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Exercise 1: Initializing git
 
+### c)
+
+Strengths 
+- great for collaboration
+- very hard to lose files
+
+Weaknesses
+- can be complicated to use
+- Struggles with large files
