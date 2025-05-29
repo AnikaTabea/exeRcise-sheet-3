@@ -1,0 +1,13 @@
+---
+title: "Exercise Sheet 3"
+author: "Anika Kind (12767778)"
+date: "2025-05-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 1: Initializing git
+
