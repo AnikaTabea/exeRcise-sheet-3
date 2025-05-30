@@ -30,3 +30,31 @@ Weaknesses
 ### a)
 
 https://github.com/AnikaTabea/exeRcise-sheet-3/blob/main/Ex_3.Rmd
+
+## Exercise 3: Pixar Films
+
+### a)
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+pixar_films <- read_csv("data/pixar_films.csv")
+
+pixar_films <- pixar_films %>% 
+  filter(!is.na(film))
+
+pixar_films$film_rating <- as.factor(pixar_films$film_rating)
+
+```
+
+film_rating: 
+
+- G: General Audiences. This means, all ages are admitted.
+
+- PG: Parental Guidance Suggested. This means, some material may not be suitable for children.
+
+The factor data type is suitable for categorical variables. This means variables with a finite number of repeating values. In this case, these are the values G and PG, which are repeated.
+
+
