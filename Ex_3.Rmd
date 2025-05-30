@@ -26,3 +26,7 @@ Weaknesses
 - Struggles with large files
 
 ## Exercise 2: Putting your Repository on GitHub
+
+### a)
+
+https://github.com/AnikaTabea/exeRcise-sheet-3/blob/main/Ex_3.Rmd
