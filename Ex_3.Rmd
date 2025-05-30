@@ -24,3 +24,5 @@ Weaknesses
 - can be complicated to use
 
 - Struggles with large files
+
+## Exercise 2: Putting your Repository on GitHub
