@@ -57,4 +57,15 @@ film_rating:
 
 The factor data type is suitable for categorical variables. This means variables with a finite number of repeating values. In this case, these are the values G and PG, which are repeated.
 
+### b)
+
+```{r}
+film_series <- data.frame(
+  title = c("Toy Story", "Cars", "Incredibles"),
+  number_of_movies = c("4", "3", "2")
+)
+
+View(film_series)
+```
+
 
