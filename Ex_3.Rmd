@@ -68,4 +68,20 @@ film_series <- data.frame(
 View(film_series)
 ```
 
+### c)
+
+```{r}
+public_response <- read_csv("data/public_response.csv")
+
+public_response$cinema_score <- factor(public_response$cinema_score,
+                                       levels = c("A-", "A", "A+"),
+                                       ordered = TRUE)
+
+merged_data <- merge(public_response, pixar_films, by = "film")
+
+head(merged_data)
+
+```
+
+
 
