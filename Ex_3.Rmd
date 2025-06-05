@@ -61,8 +61,8 @@ The factor data type is suitable for categorical variables. This means variables
 
 ```{r}
 film_series <- data.frame(
-  title = c("Toy Story", "Cars", "Incredibles"),
-  number_of_movies = c("4", "3", "2")
+  title = c("Toy Story", "Cars", "Incredibles", "Finding Nemo/ Dori"),
+  number_of_movies = c("4", "3", "2", "2")
 )
 
 View(film_series)
@@ -83,5 +83,42 @@ head(merged_data)
 
 ```
 
+### d)
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+cinema_levels <- c("A-", "A", "A+")
+public_response$cinema_score <- factor(public_response$cinema_score, 
+                                       levels = cinema_levels, 
+                                       ordered = TRUE)
+
+public_response$series <- case_when(
+  grepl("Toy Story", public_response$film) ~ "Toy Story",
+  grepl("Cars", public_response$film) ~ "Cars",
+  grepl("Monsters", public_response$film) ~ "Monsters",
+  grepl("Finding", public_response$film) ~ "Finding Nemo",
+  grepl("Incredibles", public_response$film) ~ "Incredibles",
+  TRUE ~ "Standalone"
+)
+
+filtered_data <- public_response %>%
+  filter(!is.na(cinema_score) & series != "Standalone")
+
+filtered_data$cinema_score_numeric <- as.numeric(filtered_data$cinema_score)
+
+ggplot(filtered_data, aes(x = series, y = cinema_score_numeric, fill = film)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8)) +
+  scale_y_continuous(breaks = 1:3, labels = cinema_levels) +
+  labs(title = "CinemaScore Ratings by Pixar Film Series",
+       x = "Film Series",
+       y = "Cinema Score",
+       fill = "Film") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+In general, there is no clear pattern. In three series, the second movie has the highest rating. In the Incredibles series, both films are rated A+. In the Cars series, the first and third movies are rated A, while the second movie is rated A-.
 
 
