@@ -121,4 +121,13 @@ ggplot(filtered_data, aes(x = series, y = cinema_score_numeric, fill = film)) +
 
 In general, there is no clear pattern. In three series, the second movie has the highest rating. In the Incredibles series, both films are rated A+. In the Cars series, the first and third movies are rated A, while the second movie is rated A-.
 
+## Exercise 4: Open Analysis 
+
+### c)
+
+- Dataset name: CO2 emissions by source
+
+- Link: https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20source%20-%20CDIAC%20(2016)/CO2%20emissions%20by%20source%20-%20CDIAC%20(2016).csv
+
+
 
