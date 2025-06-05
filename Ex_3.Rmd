@@ -129,5 +129,8 @@ In general, there is no clear pattern. In three series, the second movie has the
 
 - Link: https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20source%20-%20CDIAC%20(2016)/CO2%20emissions%20by%20source%20-%20CDIAC%20(2016).csv
 
+### d)
+
+How have CO₂ emissions from liquid, fluid and gas changed over time in Germany, and which fuel source is currently the dominant contributor?
 
 
