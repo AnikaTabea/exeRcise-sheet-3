@@ -133,4 +133,40 @@ In general, there is no clear pattern. In three series, the second movie has the
 
 How have CO₂ emissions from liquid, fluid and gas changed over time in Germany, and which fuel source is currently the dominant contributor?
 
+### e,f)
+
+```{r}
+co2 <- read_delim("data/CO2 emissions by source - CDIAC (2016).csv",
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+co2 <- co2 %>% 
+  mutate(solid_fuel_consumption = `Solid fuel consumption (CDIAC (2016))`) %>%
+  mutate(liquid_fuel_consumption = `Liquid fuel consumption (CDIAC (2016))`) %>%
+  mutate(gas_fuel_consumption = `Gas fuel consumption (CDIAC (2016))`) %>% 
+  mutate(cement_prod = `Cement production (CDIAC (2016))`) %>% 
+  mutate(gas_flaring = `Gas flaring (CDIAC (2016))`) %>%
+  select(solid_fuel_consumption, liquid_fuel_consumption, gas_flaring, gas_fuel_consumption, cement_prod, Year, Entity)
+
+  
+co2 <- co2 %>% pivot_longer(cols = c(solid_fuel_consumption, liquid_fuel_consumption, gas_flaring, gas_fuel_consumption, cement_prod), names_to = "source", values_to = "number") 
+co2 <- co2 %>%filter(!is.na(number))
+
+
+```
+
+```{r }
+ggplot(data = co2,
+       mapping = aes(
+         x = Year,
+         y = number,
+         color = source
+       )) +
+  geom_line()+
+  labs(
+    title = "The source of Co2 emissions in Germany",
+    subtitle = "1792 - 2013",
+    x = "Year",
+    y = "Amount",
+    color = "Source"
+  )
+```
 
